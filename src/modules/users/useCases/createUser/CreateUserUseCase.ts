@@ -13,7 +13,7 @@ class CreateUserUseCase {
     const foundUser = this.usersRepository.findByEmail(email)
 
     if (foundUser) {
-      throw new Error("Email is already registred")
+      throw new Error("This email is alread in use")
     }
 
     const newUser = this.usersRepository.create({ name, email })
